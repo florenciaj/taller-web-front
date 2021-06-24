@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from './product';
+import { Product, ProductResponse } from './product';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -9,13 +9,13 @@ import { tap } from 'rxjs/operators';
 })
 export class ProductService {
   private productsUrl =
-    'https://private-fa4c39-tallerweb2.apiary-mock.com/products';
+    'http://localhost:8000/api/product';
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Product[]> {
+  getProducts(): Observable<ProductResponse> {
     return this.http
-      .get<Product[]>(this.productsUrl)
+      .get<ProductResponse>(this.productsUrl)
       .pipe(tap((products) => console.log('products fetched', products)));
   }
 }
