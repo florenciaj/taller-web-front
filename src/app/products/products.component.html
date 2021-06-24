@@ -1,6 +1,39 @@
-<p>products works!</p>
-<ul>
-  <li *ngFor="let product of products">
-    {{ product.description }}
-  </li>
-</ul>
+<div class="container">
+  <div class="products">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="filters">
+          <ul>
+            <li class="active" data-filter="*">All Products</li>
+            <li data-filter=".des">Featured</li>
+            <li data-filter=".dev">Flash Deals</li>
+            <li data-filter=".gra">Last Minute</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="filters-content">
+          <div class="row grid">
+            <div
+              *ngFor="let product of products"
+              class="col-lg-4 col-md-4 all des"
+            >
+              <div class="product-item">
+                <a href="#"><img src="{{ product.image }}" alt="" /></a>
+                <div class="down-content">
+                  <a href="#"
+                    ><h4>{{ product.name }}</h4></a
+                  >
+                  <h6>${{ product.price | currency: "ARS":"" }}</h6>
+                  <p>
+                    {{ product.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
