@@ -1,0 +1,46 @@
+<div class="d-md-flex half">
+    <div class="contents">
+
+        <div class="container mt-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="form-block mx-auto">
+                        <div class="text-center mb-5">
+                            <h1>Registrarse</h1>
+                        </div>
+                        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" formControlName="email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" formControlName="password">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="surname" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="surname">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+
+                            <input type="submit" value="Registrarse" class="btn filled-button">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg"></div>
+
+</div>

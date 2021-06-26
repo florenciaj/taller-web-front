@@ -11,15 +11,21 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.0",
+    "@angular/cdk": "^12.1.0",
     "@angular/common": "~12.0.0",
     "@angular/compiler": "~12.0.0",
     "@angular/core": "~12.0.0",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "~12.0.0",
+    "@angular/material": "^12.1.0",
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
-    "bootstrap": "^5.0.1",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
+    "firebase": "^8.6.8",
     "isotope-layout": "^3.0.6",
+    "jquery": "^3.6.0",
     "owl.carousel": "^2.3.4",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
@@ -38,6 +44,13 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.2.3"
+    "typescript": "~4.2.3",
+    "@angular-devkit/architect": ">= 0.900 < 0.1300",
+    "firebase-tools": "^8.0.0 || ^9.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^7.0.3",
+    "jsonc-parser": "^3.0.0"
   }
 }

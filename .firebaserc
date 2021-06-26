@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "taller-web-2-8c1e1": {
+      "hosting": {
+        "taller-web2": [
+          "taller-web-2-8c1e1"
+        ]
+      }
+    }
+  }
+}
