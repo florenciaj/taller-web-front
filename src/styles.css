@@ -244,6 +244,9 @@ header .navbar {
 .background-header .navbar-nav .show > .nav-link {
   color: #f33f3f !important;
 }
+.resaltar {
+  color: #f33f3f
+}
 .navbar .navbar-brand {
   float: left;
   margin-top: -12px;
@@ -320,7 +323,7 @@ header .navbar {
 
 .banner-item-01 {
   padding: 300px 0px;
-  background-image: url(assets/images/slide_01.jpg);
+  background-image: url(assets/images/tostado.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -433,7 +436,7 @@ header .navbar {
 
 .product-item .down-content h4 {
   font-size: 17px;
-  color: #1a6692;
+  color: #f33f3f;
   margin-bottom: 20px;
 }
 
