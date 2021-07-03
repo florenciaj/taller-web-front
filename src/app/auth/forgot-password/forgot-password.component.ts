@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -10,18 +10,26 @@ import { AuthService } from '../services/auth.service';
   providers: [AuthService]
 })
 export class ForgotPasswordComponent implements OnInit {
-  userEmail = new FormControl('');
+  passwordForm = new FormGroup({
+    userEmail: new FormControl('')
+  });
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.passwordForm = this.formBuilder.group({
+      userEmail: ['',
+        [
+          Validators.required,
+          Validators.email
+        ]],
+    });
   }
 
   async onReset(): Promise<void> {
     try {
-      const email: string = this.userEmail.value;
+      const email: string = this.passwordForm.value["userEmail"];
       await this.authService.resetPassword(email);
-      window.alert('enviado');
       this.router.navigate(['/login']);
     } catch (error) {
       console.log(error);
