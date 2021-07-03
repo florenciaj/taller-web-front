@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -17,9 +17,34 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      email: ['',
+        [
+          Validators.required,
+          Validators.email
+        ]],
+      password: ['',
+        [
+          Validators.required,
+          Validators.minLength(6)
+        ]],
+      name: ['',
+        [
+          Validators.required,
+        ]],
+      surname: ['',
+        [
+          Validators.required,
+        ]],
+      address: ['',
+        [
+          Validators.required,
+        ]]
+    });
+  }
 
   async onRegister() {
     const { email, password } = this.registerForm.value;
@@ -32,5 +57,4 @@ export class RegisterComponent implements OnInit {
       console.log(error);
     }
   }
-
 }

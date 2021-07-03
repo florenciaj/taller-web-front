@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
 
 
 @NgModule({
@@ -13,7 +14,17 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Campo requerido',
+          minlength: ({ requiredLength, actualLength }) =>
+            `Espera ${requiredLength} pero obtuvo ${actualLength}`,
+          invalidAddress: error => `Dirección no válida`
+        }
+      }
+    })
   ]
 })
 export class LoginModule { }

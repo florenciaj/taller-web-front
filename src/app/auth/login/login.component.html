@@ -9,14 +9,15 @@
                         <div class="text-center mb-5">
                             <h1>Iniciar sesión</h1>
                         </div>
-                        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" errorTailor>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" formControlName="email">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" formControlName="password">
+                                <input type="password" class="form-control" id="password" formControlName="password"
+                                    [controlErrorsTpl]="passwordError">
                             </div>
 
                             <div class="d-sm-flex mb-5 align-items-center">
@@ -26,7 +27,8 @@
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <input type="submit" value="Ingresar con correo" class="btn filled-button w-75">
+                                <button type="submit" class="btn filled-button w-75"
+                                    [disabled]="loginForm.invalid">Ingresar con correo</button>
                             </div>
 
                             <span class="text-center my-3 d-block">ó</span>
@@ -55,3 +57,13 @@
         </div>
     </div>
 </div>
+
+<ng-template let-error let-text="text" #passwordError>
+    <!--  {{ error | json }} {{ text }}-->
+    <div *ngIf="error?.minlength">
+        <small class="control-error fw-normal">Ingresaste {{error?.minlength?.actualLength}} de los {{error?.minlength?.requiredLength}} caracteres mínimos</small>
+    </div>
+    <div *ngIf="error?.required">
+        <small class="control-error fw-normal">Campo requerido</small>
+    </div>
+</ng-template>

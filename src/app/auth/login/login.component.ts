@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -17,9 +17,21 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ['',
+        [
+          Validators.required,
+          Validators.email
+        ]],
+      password: ['',
+        [
+          Validators.required,
+          Validators.minLength(6)
+        ]]
+    });
   }
 
   async onGoogleLogin() {
@@ -48,5 +60,4 @@ export class LoginComponent implements OnInit {
       console.log(error)
     }
   }
-
 }
