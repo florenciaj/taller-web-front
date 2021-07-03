@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SendEmailComponent } from './auth/send-email/send-email.component';
     ProductsComponent,
     HomeComponent,
     NavbarComponent,
-    SendEmailComponent],
+    SendEmailComponent,
+    CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

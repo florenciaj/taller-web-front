@@ -5,7 +5,6 @@ import { first } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  // public user: firebase.User;
 
   constructor(public afAuth: AngularFireAuth) { }
 
