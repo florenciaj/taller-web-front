@@ -1,0 +1,6 @@
+.trash {
+    font-size: 2em;
+}
+.trash:hover {
+    color: red
+}

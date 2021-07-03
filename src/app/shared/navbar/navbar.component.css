@@ -170,3 +170,20 @@ header .navbar {
         padding-bottom: 15px;
     }
 }
+.cartGroup a{
+    color: white;
+    font-size: 2em;
+}
+.cartGroup>a>span {
+    z-index: 2;
+    position: relative;
+    left: -1em;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    min-width: 18px;
+    padding: 0 5px;
+    display: inline-block;
+}

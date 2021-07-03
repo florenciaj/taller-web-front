@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { environment } from 'src/environments/environment';
     AppComponent,
     ProductsComponent,
     HomeComponent,
-    NavbarComponent],
+    NavbarComponent,
+    CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
