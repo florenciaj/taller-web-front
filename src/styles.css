@@ -72,7 +72,6 @@ a.filled-button, .filled-button {
     background-color: #f33f3f;
     color: #fff;
     font-size: 14px;
-    text-transform: capitalize;
     font-weight: 300;
     padding: 10px 20px;
     border-radius: 5px;
@@ -763,7 +762,6 @@ footer .inner-content p a {
     background-color: #f33f3f;
     color: #fff;
     font-size: 14px;
-    text-transform: capitalize;
     font-weight: 300;
     padding: 10px 20px;
     border-radius: 5px;

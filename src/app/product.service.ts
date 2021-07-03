@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product, ProductResponse } from './product';
+import { ProductResponse } from './product';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
 })
 export class ProductService {
   private productsUrl =
-    'http://localhost:8000/api/product';
+    'http://localhost:5000/api/product';
 
   constructor(private http: HttpClient) {}
 

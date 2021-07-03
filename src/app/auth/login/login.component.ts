@@ -22,12 +22,27 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  async onGoogleLogin() {
+    try {
+      this.authService.loginGoogle();
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async onLogin() {
     const { email, password } = this.loginForm.value;
     try {
       const user = await this.authService.login(email, password);
-      if (user) {
+      if (user && user.user.emailVerified) {
         this.router.navigate(['/home']);
+      }
+      else if (user) {
+        this.router.navigate(['/validar-email']);
+      }
+      else {
+        this.router.navigate(['/register']);
       }
     } catch (error) {
       console.log(error)
