@@ -12,7 +12,7 @@ export class AuthService {
     try {
       return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 
@@ -20,7 +20,7 @@ export class AuthService {
     try {
       return this.afAuth.sendPasswordResetEmail(email);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 

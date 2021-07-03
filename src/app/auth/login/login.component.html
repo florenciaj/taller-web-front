@@ -8,6 +8,9 @@
                     <div class="form-block mx-auto">
                         <div class="text-center mb-5">
                             <h1>Iniciar sesión</h1>
+                            <div class="alert alert-danger" role="alert" *ngIf="message">
+                                <h4 class="fw-bolder px-4">{{ message}} </h4>
+                            </div>
                         </div>
                         <form [formGroup]="loginForm" (ngSubmit)="onLogin()" errorTailor>
                             <div class="mb-3">
@@ -61,7 +64,8 @@
 <ng-template let-error let-text="text" #passwordError>
     <!--  {{ error | json }} {{ text }}-->
     <div *ngIf="error?.minlength">
-        <small class="control-error fw-normal">Ingresaste {{error?.minlength?.actualLength}} de los {{error?.minlength?.requiredLength}} caracteres mínimos</small>
+        <small class="control-error fw-normal">Ingresaste {{error?.minlength?.actualLength}} de los
+            {{error?.minlength?.requiredLength}} caracteres mínimos</small>
     </div>
     <div *ngIf="error?.required">
         <small class="control-error fw-normal">Campo requerido</small>
