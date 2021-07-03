@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
+  public message: any;
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
       this.authService.loginGoogle();
       this.router.navigate(['/home']);
     } catch (error) {
-      console.log(error);
+      this.message = error;
     }
   }
 
@@ -57,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/register']);
       }
     } catch (error) {
-      console.log(error)
+      this.message = "Email y/o contraseña incorrecta";
     }
   }
 }

@@ -5,7 +5,6 @@ import { first } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  // public user: firebase.User;
 
   constructor(public afAuth: AngularFireAuth) { }
 
@@ -13,7 +12,7 @@ export class AuthService {
     try {
       return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 
@@ -21,7 +20,7 @@ export class AuthService {
     try {
       return this.afAuth.sendPasswordResetEmail(email);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 
