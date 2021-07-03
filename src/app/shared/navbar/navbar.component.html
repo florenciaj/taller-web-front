@@ -19,16 +19,16 @@
                 </ul>
                 <ul class="navbar-nav ms-auto" *ngIf="user$ | async as user; else login">
                     <div *ngIf="user?.emailVerified">
-                        <li class="nav-item">
-                            <a class="nav-link mb-3" id="noBorder"> {{ user?.displayName }}</a>
+                        <li class="nav-item d-inline">
+                            <a class="nav-link mb-3  d-inline" id="noBorder"> {{ user?.displayName }}</a>
                         </li>
-                        <li class="nav-item" *ngIf="user">
-                            <a class="nav-link filled-button" (click)="onLogout()">Cerrar sesión</a>
+                        <li class="nav-item d-inline" *ngIf="user">
+                            <a class="nav-link filled-button  d-inline" (click)="onLogout()">Cerrar sesión</a>
                         </li>
                     </div>
                     <div *ngIf="!user?.emailVerified">
                         <ul class="navbar-nav ml-auto ms-auto">
-                            <li class="nav-item">
+                            <li class="nav-item  d-inline">
                                 <a class="nav-link filled-button mb-3" routerLink="/login">Iniciar sesión</a>
                             </li>
                         </ul>
@@ -36,7 +36,7 @@
                 </ul>
                 <ng-template #login>
                     <ul class="navbar-nav ml-auto ms-auto">
-                        <li class="nav-item">
+                        <li class="nav-item  d-inline">
                             <a class="nav-link filled-button mb-3" routerLink="/login">Iniciar sesión</a>
                         </li>
                     </ul>
