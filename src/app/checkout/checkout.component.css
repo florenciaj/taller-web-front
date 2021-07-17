@@ -1,0 +1,119 @@
+.form-title {
+    margin-top: 8rem !important;
+}
+
+label {
+    font-size: 1rem;
+}
+
+.content {
+    padding: 7rem 0;
+}
+
+.half, .half .container>.row {
+    height: 100vh;
+    min-height: 700px;
+}
+
+.half .contents {
+    background: #f6f7fc;
+}
+
+.half .bg {
+    width: 35%;
+    background-size: cover;
+    background-position: right !important;
+}
+
+.bg {
+    background-image: url('../../assets/images/checkout-background.jpg');
+}
+
+.alert {
+    display: flex !important;
+    justify-content: start !important;
+    flex-direction: column !important;
+}
+
+.alert ul {
+    list-style: disc;
+}
+
+@media (max-width: 767.98px) {
+    .half .bg {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.half .contents {
+    width: 75%;
+}
+
+@media (max-width: 767.98px) {
+    .half .contents {
+        width: 100%;
+    }
+}
+
+.half .contents .form-control, .half .bg .form-control {
+    border: none;
+    border-radius: 4px;
+    height: 54px;
+    background: #efefef;
+}
+
+.half .contents .form-control:active, .half .contents .form-control:focus, .half .bg .form-control:active, .half .bg .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.half .bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.half a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.half .forgot-pass {
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+}
+
+.form-block {
+    background: #fff;
+    padding: 40px;
+    max-width: 45rem;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767.98px) {
+    .form-block {
+        padding: 25px;
+    }
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.control .caption {
+    position: relative;
+    top: .2rem;
+    color: #888;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}

@@ -7,8 +7,8 @@ import { CartItem } from './cartItem';
   providedIn: 'root',
 })
 export class CartService {
-  private cart = new BehaviorSubject<Array<CartItem>>(new Array()); //Definimos nuestro BehaviorSubject, este debe tener un valor inicial siempre
-  public currentDataCart$ = this.cart.asObservable(); //Tenemos un observable con el valor actual del BehaviourSubject
+  private cart = new BehaviorSubject<Array<CartItem>>(new Array()); 
+  public currentDataCart$ = this.cart.asObservable();
 
   constructor() {
     var cartOnCache = localStorage.getItem('cart');
@@ -24,7 +24,8 @@ export class CartService {
         (item) => item.product._id == product._id
       );
       console.log(JSON.stringify(product._id));
-      if (productIndex != -1) listCart[productIndex].quantity += 1;
+      if (productIndex != -1) 
+        listCart[productIndex].quantity += 1;
       else {
         var newItem: CartItem = { product: product, quantity: 1 };
         listCart.push(newItem);
@@ -58,5 +59,10 @@ export class CartService {
 
     this.cart.next(listCart);
     localStorage.setItem('cart', JSON.stringify(listCart));
+  }
+
+  public clearCart() {
+    this.cart.next([]);
+    localStorage.clear();
   }
 }

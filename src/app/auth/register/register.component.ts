@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
       if (user.message) {
         this.message = user.message;
       } else {
-        fetch('http://localhost:5000/api/user', {
+        fetch('http://localhost:8000/api/user', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json'

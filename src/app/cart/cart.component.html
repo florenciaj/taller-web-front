@@ -6,11 +6,19 @@
     *ngFor="let item of items"
     class="row p-4 border border-danger rounded m-1 bg-light align-items-center"
   >
-    <img src="{{ item.product.photoUrl }}" class="col-sm-2" /> 
-    <span class="col-md-auto ">{{ item.product.name }}</span>
-    <span class="col-sm-2 offset-md-4 text-success ">${{ item.product.price }}</span>
-    <span class="col-sm-1">Cantidad: {{item.quantity}} </span>
-    <i class="fas fa-trash trash col-sm-auto" (click)="removeFromCart(item.product)"></i>
+    <img src="{{ item.product.photoUrl }}" class="col-sm-2" />
+    <span class="col-md-auto">{{ item.product.name }}</span>
+    <span class="col-sm-2 offset-md-4 text-success"
+      >${{ item.product.price }}</span
+    >
+    <span class="col-sm-1">Cantidad: {{ item.quantity }} </span>
+    <i
+      class="fas fa-trash trash col-sm-auto"
+      (click)="removeFromCart(item.product)"
+    ></i>
   </div>
-  <h3>Total: ${{totalPrice}}</h3>
+  <div class="d-flex justify-content-between w-100 mt-3">
+    <h3>Total: ${{ totalPrice }}</h3>
+    <a class="filled-button mb-3 w-auto" routerLink="/checkout">Ir a pagar</a>
+  </div>
 </div>

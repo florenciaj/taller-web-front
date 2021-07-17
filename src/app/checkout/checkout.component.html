@@ -1,0 +1,119 @@
+<div class="d-md-flex half">
+  <div class="contents">
+    <div class="container mt-5">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-12">
+          <div class="form-block mx-auto">
+            <div class="mb-5">
+              <h1 class="text-center">Datos de facturación</h1>
+              <div class="alert alert-success" role="alert" *ngIf="message">
+                <h4 class="fw-bolder px-4">{{ message }}</h4>
+              </div>
+              <div class="alert alert-danger" role="alert" *ngIf="messageError">
+                <h4 class="fw-bolder px-4">{{ messageError }}</h4>
+              </div>
+            </div>
+            <form
+              id="form"
+              [formGroup]="checkoutForm"
+              (ngSubmit)="onSubmit()"
+              errorTailor
+            >
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="email"
+                  formControlName="name"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="surname" class="form-label">Apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="surname"
+                  name="surname"
+                  formControlName="surname"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  formControlName="address"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="cardName" class="form-label"
+                  >Nombre en la tarjeta</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardName"
+                  name="cardName"
+                  formControlName="cardName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label"
+                  >Numero de tarjeta</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardNumber"
+                  name="cardNumber"
+                  formControlName="cardNumber"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cardExpiration" class="form-label"
+                  >Valido hasta</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardExpiration"
+                  name="cardExpiration"
+                  formControlName="cardExpiration"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cardSecurityCode" class="form-label"
+                  >Codigo de seguridad</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardSecurityCode"
+                  name="cardSecurityCode"
+                  formControlName="cardSecurityCode"
+                />
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <input
+                  type="submit"
+                  value="Comprar"
+                  class="btn filled-button"
+                  [disabled]="checkoutForm.invalid"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg"></div>
+</div>
